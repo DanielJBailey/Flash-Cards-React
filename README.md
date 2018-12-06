@@ -22,3 +22,4 @@ A flash card / study aid built entirely using React with Sass.
 
 ## Screenshots
 <img src="https://i.gyazo.com/ac151cfef99290a3bc1f167eec61002b.png" width="500px"/>
+<img src="https://i.gyazo.com/b3da0a58bd2a8b55ee02e34120ecc7b6.png" width="500px"/>
