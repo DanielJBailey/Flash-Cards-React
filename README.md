@@ -2,7 +2,7 @@
 A flash card / study aid built entirely using React with Sass. 
 
 # Live Demo
-[Live]()
+[Live](https://danieljbailey.github.io/Flash-Cards-React/)
 
 ## Goals For Project
 * Ability to add new flash cards

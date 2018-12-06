@@ -1,9 +1,11 @@
 {
   "name": "cards",
-  "homepage": "http://myname.github.io/myapp",
+  "homepage": "http://DanielJBailey.github.io/Flash-Cards-React",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.0.1",
+    "gh-pages-deploy": "^0.5.0",
     "node-sass": "^4.10.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -14,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "yarn build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
