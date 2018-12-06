@@ -13,6 +13,7 @@
         width: 100%;
         height: 300px;
         padding: 10px;
+        caret-color: #ff6b81;
         background-color: white;
         border-radius: 5px;
         border: none;
@@ -31,20 +32,17 @@
     .submit {
         padding: 15px 25px;
         -webkit-appearance: button;
-        background-color: black;
+        background-color: #2f3542;
         color: white;
         font-weight: bold;
         border-radius: 5px;
-        border: none;
+        border: 2px solid #ff6b81;
         outline: none;
         cursor: pointer;
         font-size: 16px;
         box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
         &:last-child {
             margin-left: 5px;
-        }
-        &:hover {
-            background-color: rgba(0,0,0,0.6);
         }
 
     }
