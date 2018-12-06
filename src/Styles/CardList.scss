@@ -43,13 +43,35 @@
         }
     }
 
-    .card {
+    .fake-card {    
         width: 600px;
         margin: 10px;
         height: 350px;
+        position: relative;
+        background-color: none;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        font-size: 30px;
         font-family: 'Patrick Hand', cursive;
-        background-color: white;
-        box-shadow: 2px 5px 10px rgba(0,0,0,0.4);
-    }
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
+        @include flex;
 
+        .btn {
+            padding: 10px 20px;
+            -webkit-appearance: button;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+            &:hover {
+                background-color: rgba(0,0,0,0.8);
+            }
+        }
+    }
 }

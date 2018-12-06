@@ -3,39 +3,41 @@
     margin: 10px;
     height: 350px;
     position: relative;
+    background-color: none;
     transition: transform 1s;
     transform-style: preserve-3d;
-    cursor: pointer;
     font-family: 'Patrick Hand', cursive;
-    background-color: white;
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
     .card-face {
         position: absolute;
         width: 100%;
-        height: 100%;
         backface-visibility: hidden;
+        height: 100%;
     }
     .card-face-front {
-        background: white;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        cursor: pointer;
         justify-content: flex-start;
+        background-color: white;
         padding: 1em;
         font-size: 30px;
     }
     .card-face-back {
-        background: lightgray;
         transform: rotateY(180deg);
         display: flex;
         flex-direction: column;
+        cursor: pointer;
         align-items: flex-start;
         justify-content: flex-start;
         font-size: 30px;
         padding: 1em;
+        background-color: white;
     }
 }
 .card.is-flipped {
     transform: rotateY(180deg);
+    background: transparent;
     box-shadow: -2px 5px 10px rgba(0,0,0,0.4);
 }

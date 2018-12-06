@@ -36,6 +36,7 @@ class CardForm extends React.Component {
 
                 <textarea
                     placeholder="Question:"
+                    autoFocus
                     name="front"
                     value={front}
                     className="input"

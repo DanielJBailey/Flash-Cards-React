@@ -5,20 +5,10 @@ import CardList from './Components/CardList';
 
 class App extends React.Component {
   state = {
-    cards: [
-      { id: 1, front: "Question", back: "Answer", correct: false },
-      { id: 2, front: "Question2", back: "Answer2", correct: false },
-      { id: 3, front: "Question3", back: "Answer3", correct: false },
-      { id: 4, front: "Question4", back: "Answer4", correct: false },
-      { id: 5, front: "Question5", back: "Answer5", correct: false },
-      { id: 6, front: "Question6", back: "Answer6", correct: false },
-      { id: 7, front: "Question7", back: "Answer7", correct: false },
-      { id: 8, front: "Question8", back: "Answer8", correct: false },
-      { id: 9, front: "Question9", back: "Answer9", correct: false },
-      { id: 10, front: "Question10", back: "Answer10", correct: false }
-    ],
+    cards: [],
     menuOpen: false,
-    currentCard: 0
+    currentCard: 0,
+    flipped: false
   }
 
   // TOGGLE NEW CARD MENU
@@ -52,23 +42,25 @@ class App extends React.Component {
     })
   };
 
-  cycleRight= () => {
-    let {currentCard, cards} = this.state;
+  // CYCLE RIGHT
+  cycleRight = () => {
+    let { currentCard, cards } = this.state;
     let index = currentCard;
-    if(currentCard >= cards.length - 1) {
+    if (currentCard >= cards.length - 1) {
       index = 0;
     } else {
-      index ++;
+      index++;
     }
     this.setState({
       currentCard: index
     })
-  } 
+  }
 
+  //CYCLE LEFT
   cycleLeft = () => {
-    let {currentCard, cards} = this.state;
+    let { currentCard, cards } = this.state;
     let index = currentCard;
-    if(currentCard <= 0) {
+    if (currentCard <= 0) {
       index = cards.length - 1;
     } else {
       index--;
@@ -78,8 +70,14 @@ class App extends React.Component {
     })
   }
 
+  flipCard = () => {
+    this.setState({
+      flipped: !this.state.flipped
+    })
+  }
+
   render() {
-    let { cards, currentCard } = this.state;
+    let { cards, currentCard, flipped } = this.state;
     return (
       <>
         {this.state.menuOpen ? <div className="overlay">
@@ -89,10 +87,25 @@ class App extends React.Component {
           <CardForm toggle={this.toggleMenu} newCard={this.createCard} />
         </div> : null}
         <div className="container">
-          <button className="btn" onClick={this.toggleMenu}>Add Card</button>
-          <button className="btn" onClick={this.deleteCards}>Delete Cards</button>
+          <button
+            className="btn"
+            onClick={this.toggleMenu}>Add Card
+          </button>
+          <button 
+            className="btn" 
+            onClick={this.deleteCards}>
+            Delete All Cards
+          </button>
         </div>
-        <CardList cards={cards} currentCard={currentCard} increase={this.cycleRight} decrease={this.cycleLeft}/>
+        <CardList
+          cards={cards}
+          currentCard={currentCard}
+          increase={this.cycleRight}
+          decrease={this.cycleLeft}
+          flipCard={this.flipCard}
+          flipped={flipped}
+          toggle={this.toggleMenu}
+        />
       </>
     );
   }
