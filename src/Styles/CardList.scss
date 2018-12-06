@@ -75,3 +75,34 @@
         }
     }
 }
+
+.extra-buttons {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    .edit {
+        @include flex;
+        background-color: rgba(0,0,0,0.1);
+        padding: 10px 15px;
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+    }
+    .delete {
+        @include flex;
+        padding: 10px 15px;
+        cursor: pointer;
+        background-color: rgba(0,0,0,0.1);
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+        &:hover > svg {
+            fill: red;
+        }
+    }
+}

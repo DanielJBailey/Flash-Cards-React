@@ -19,12 +19,22 @@ class App extends React.Component {
     })
   }
 
-  // DELETE CARDS FROM ARRAY
+  // DELETE ALL CARDS FROM ARRAY
   deleteCards = () => {
     this.setState({
       cards: []
     })
   }
+
+  // DELETE A SINGLE CARD
+  deleteCard = (id) => {
+    let {cards} = this.state;
+    this.setState({
+      cards: cards.filter(card => {
+        return card.id !== id
+      })
+    })
+  };
 
   // GENERATE RANDOM ID
   getId = () => {
@@ -70,6 +80,7 @@ class App extends React.Component {
     })
   }
 
+  // FLIP CARD
   flipCard = () => {
     this.setState({
       flipped: !this.state.flipped
@@ -105,6 +116,7 @@ class App extends React.Component {
           flipCard={this.flipCard}
           flipped={flipped}
           toggle={this.toggleMenu}
+          deleteCard = {this.deleteCard}
         />
       </>
     );

@@ -23,6 +23,12 @@
         background-color: white;
         padding: 1em;
         font-size: 30px;
+
+        .edit {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
     }
     .card-face-back {
         transform: rotateY(180deg);
@@ -33,7 +39,7 @@
         justify-content: flex-start;
         font-size: 30px;
         padding: 1em;
-        background-color: white;
+        background-color: rgba(0, 0, 0, 0.05);
     }
 }
 .card.is-flipped {
