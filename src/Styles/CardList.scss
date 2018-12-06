@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+
+@mixin flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-container {
+    height: 100%;
+    width: 100%;
+    @include flex;
+    flex-direction: row;
+
+    .left-arrow {
+        background-color: rgba(0,0,0,0.2);
+        @include flex;
+        border-radius: 5px;
+        cursor: pointer;
+        svg {
+            height: 50px;
+            width: 50px;
+            fill: rgba(0,0,0,0.6);
+        }
+        &:hover > svg {
+            fill: black;
+        }
+    }
+    
+    .right-arrow {
+        background-color: rgba(0,0,0,0.2);
+        @include flex;
+        cursor: pointer;
+        border-radius: 5px;
+        svg {
+            height: 50px;
+            width: 50px;
+            fill: rgba(0,0,0,0.6);
+        }
+        &:hover > svg {
+            fill: black;
+        }
+    }
+
+    .card {
+        width: 600px;
+        margin: 10px;
+        height: 350px;
+        font-family: 'Patrick Hand', cursive;
+        background-color: white;
+        box-shadow: 2px 5px 10px rgba(0,0,0,0.4);
+    }
+
+}

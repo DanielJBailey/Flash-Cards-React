@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../Styles/CardForm.scss';
 
 class CardForm extends React.Component {
@@ -11,7 +11,8 @@ class CardForm extends React.Component {
     handleSubmit = (e) => {
         let { front, back } = this.state
         e.preventDefault();
-        // pass to parent function
+        this.props.newCard(front, back);
+        this.props.toggle();
         this.setState({
             front: "",
             back: ""

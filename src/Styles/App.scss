@@ -5,6 +5,13 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
 
     .overlay {
         background-color: rgba(0,0,0,0.7);
@@ -19,14 +26,38 @@ body {
         height: 100%;
         min-height: 100vh;
         z-index: 99;
-    }
+        animation: fadeIn 1s;
 
+        .close-menu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 1em;
+            padding: 10px;
+            background-color: rgba(255,255,255,0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 50%;
+            svg {
+                fill: black;
+                width: 30px;
+                height: 30px;
+            }
+            &:hover {
+                background-color: rgba(255,255,255,0.4);
+            }
+        }
+    }
 
     .container {
         max-width: 1200px;
-        margin: 0 auto;
-        padding: 50px 0;
-        position: relative;
+        margin: 1em;
+        position: absolute;
+        top: 0;
+        left: 0;
 
         .btn {
             padding: 15px 25px;
@@ -39,13 +70,22 @@ body {
             outline: none;
             cursor: pointer;
             font-size: 16px;
+            margin: 5px;
             box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
-            &:last-child {
-                margin-left: 5px;
-            }
             &:hover {
                 background-color: rgba(0,0,0,0.8);
             }
         }
     }
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+

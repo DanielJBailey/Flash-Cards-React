@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two');
+
 .card-form {
     display: flex;
     flex-direction: column;
@@ -15,10 +17,15 @@
         border-radius: 5px;
         border: none;
         outline: none;
+        font-family: 'Shadows Into Light Two', cursive;
         resize: none;
-        font-size: 16px;
+        font-size: 25px;
         color: rgba(0,0,0,0.8);
         margin: 10px;
+        padding: 1em;
+        &::placeholder {
+            font-size: 25px;
+        }
     }
 
     .submit {
