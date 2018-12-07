@@ -1,0 +1,6 @@
+{
+    "workbench.fontAliasing": "antialiased", // Gives you crisp text on Retina display
+    "editor.fontFamily": "Fira Code iScript",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+}
