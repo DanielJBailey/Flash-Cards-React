@@ -44,8 +44,13 @@ class Home extends React.Component {
 
   // TOGGLE EDITING MODE
   toggleEdit = () => {
+    let {cards, currentCard } = this.state
     this.resetFormInputs();
-    this.setState({ editing: !this.state.editing, });
+    this.setState({ 
+      editing: !this.state.editing,
+      front: cards[currentCard].front,
+      back: cards[currentCard].back
+    });
   }
  
 

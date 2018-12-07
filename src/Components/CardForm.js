@@ -8,7 +8,7 @@ class CardForm extends React.Component {
         let { edit, editing, toggleEdit, reset, newCard, toggleMenu, cards, currentCard, front, back } = this.props
         e.preventDefault();
         if (editing) {
-            edit({ id: cards[currentCard].id, front: cards[currentCard].front, back:cards[currentCard].back });
+            edit({ id: cards[currentCard].id, front, back });
             toggleEdit();
         } else {
             newCard(front, back);
@@ -18,7 +18,7 @@ class CardForm extends React.Component {
     };
 
     render() {
-        let { front, back, handleChange, cards, currentCard, editing} = this.props;
+        let { front, back, handleChange } = this.props;
         return (
             <form
                 className="card-form"
@@ -28,7 +28,7 @@ class CardForm extends React.Component {
                     placeholder="Question:"
                     autoFocus
                     name="front"
-                    value={editing? cards[currentCard].front: front}
+                    value={front}
                     className="input"
                     required
                     onChange={handleChange}
@@ -36,7 +36,7 @@ class CardForm extends React.Component {
                 <textarea
                     placeholder="Answer:"
                     name="back"
-                    value={editing? cards[currentCard].back: back}
+                    value={back}
                     onChange={handleChange}
                     className="input"
                     required
